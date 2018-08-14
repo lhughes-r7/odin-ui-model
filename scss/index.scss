@@ -1,0 +1,31 @@
+@import "./theme.scss";
+
+@import '~rapid7-styles';
+@include foundation-global-styles;
+
+:global {
+  // R7 mixins
+  @include r7-chrome();
+  @include r7-table();
+  @include r7-progress-bar();
+  @include r7-peek-panel();
+  @include r7-cards();
+  @include r7-pagination();
+  @include r7-input();
+  @include r7-buttons();
+  @include r7-progress-bar();
+  @include input-select();
+  @include r7-tabs();
+  @include r7-toggles();
+  @include r7-buttons();
+
+  html, body, #app {
+    height: 100%;
+  }
+
+  body {
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+  }
+}

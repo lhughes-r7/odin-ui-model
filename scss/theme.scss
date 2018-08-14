@@ -1,0 +1,19 @@
+$theme-name: dark;
+
+@import '~rapid7-styles/styles/scss/themes/_theme-palettes';
+
+$theme-inversion: (
+  light: dark,
+  dark: light
+);
+
+/* For some module mixins the light variant is needed while using the dark theme.
+ * The workaround is:
+ *
+ * @include theme-invert; // Switch theme
+ * @import '...'; // Import the module
+ * @include theme-invert; // Restore theme
+ */
+@mixin theme-invert() {
+  $theme-name: map-get($theme-inversion, $theme-name) !global;
+}
